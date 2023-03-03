@@ -22,17 +22,35 @@ The dataset includes variables in different formats:
 * Int64: Int64 format represents integer variables. An example of an integer variable in our dataset is ApplicantIncome.
 * Float64: Float64 format represents variables with decimal values, which are also numerical variables. Examples of numerical variables in our dataset include CoapplicantIncome, LoanAmount, Loan_Amount_Term, and Credit_History.
 
-
 ## Process
 (fill in what you did during EDA, cleaning, feature engineering, modeling, deployment, testing)
-### (your step 1)
-### (your step 2)
+### Step 1 Data Exploration
+* Basic data exploration to make some inferences about the data
+* Figure out some irregularities
+* Address missing values
+* Performed some basic statistics for numerical variables
+* Measured the distribution of various variables using histogram & box plots
+### Step 2 Data Cleaning
+* This step typically involves imputing missing values and treating outliers. 
+* Imputing Missing Values
+* Used a log transformation to get rid of the extreme values
+### Step 3 Building a Predictive Model
+* Logistic Regression showed an Accuracy of 78.378%
+* Later, paramater grid search was used to improve the results
+* The Best parameters:  {'max_depth': 3, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100} Best score was observed to be at 0.8204651162790698
+### Step 4 Using Pipeline
+* Pipeline was created to take one row of the dataset and predict the probability of being granted a loan.
+### Step 5 Deploying ML 
+* Machine learning model was deployed using Flask
 
 ## Results/Demo
-(fill in your model's performance, details about the API you created, and (optional) a link to an live demo)
+Initially, the Logistic Regression model achieved an accuracy of 78.378%. However, to further improve the results, a parameter grid search was performed. The grid search identified the best parameters for the model to be 'max_depth': 3, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100. With these parameters, the best score observed was 0.8204651162790698.
 
 ## Challanges 
-(discuss challenges you faced in the project)
+Several challenges were encountered while developing a machine learning model for automating loan approval processes. Such as:
+* Bias in the data
+* Missing or incomplete data
+* Overfitting
 
 ## Future Goals
-(what would you do if you had more time? are there any potential issues/biases with your model/use case?)
+Maintaining the model is crucial as it needs to be continuously monitored and updated to ensure that it provides accurate predictions. This process can be demanding in terms of time and resources, as it requires consistent investment in data collection, model updates, and performance monitoring.
